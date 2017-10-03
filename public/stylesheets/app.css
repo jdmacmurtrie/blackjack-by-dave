@@ -1,0 +1,20 @@
+body {
+    background: #3E6B30;
+}
+
+.card {
+  background: #dfd8c3;
+  border: 2px solid black;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 60px;
+  display: inline-block;
+  margin-right: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+
+form {
+  display: inline;
+}
