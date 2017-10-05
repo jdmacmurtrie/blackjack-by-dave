@@ -1,8 +1,13 @@
-<h1>Welcome to Blackjack!</h1>
+<div class="welcome">
+  <h1>Welcome to Blackjack!</h1>
 
-<h3>Please enter your name!</h3>
-<form action="/play-game" method="post">
-  <input type="text" name="name" id="name">
-
-  <button type="submit">Play!</button>
-</form>
+  <h3 class="enter-name">Please enter your name:</h3>
+  <form action="/play-game" method="post">
+    <div class="name-field">
+      <input type="text" name="name" autofocus="autofocus" id="name">
+    </div>
+    <div class="play-button">
+      <button class="btn btn-4 btn-4c icon-arrow-right">Play!</button>
+    </div>
+  </form>
+</div>
