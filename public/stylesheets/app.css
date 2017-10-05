@@ -11,61 +11,11 @@
 
 body {
   background: #3E6B30;
-  font-family: 'Rye', cursive;
+  font-family: 'Rye', serif;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Rye', cursive;
-}
-
-.welcome {
-  width: 65%;
-  margin: auto;
-  background: white;
-  text-align: center;
-  height: 100vh;
-  padding-top: 10%;
-  font-family: 'Rye', cursive;
-}
-
-.enter-name {
-  padding-top: 10px;
-}
-
-.name-field {
-  padding-top: 10px;
-}
-
-.play-button {
-  padding-top: 10px;
-}
-
-#name {
-  width: 50%;
-  margin: auto;
-  background: #3E6B30;
-  color: white;
-  border: 2px solid black;
-  cursor: auto;
-  border-radius: 5px;
-}
-
-
-.card {
-  background: #dfd8c3;
-  border: 2px solid black;
-  width: 100px;
-  height: 150px;
-  border-radius: 10px;
-  text-align: center;
-  padding-top: 60px;
-  display: inline-block;
-  margin-right: 5px;
-  box-shadow: 5px 5px 5px black;
-}
-
-form {
-  display: inline;
+  font-family: 'Rye', serif;
 }
 
 .btn {
@@ -80,7 +30,6 @@ form {
 	margin: 15px 30px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	/*font-weight: 700;*/
 	outline: none;
 	position: relative;
 	-webkit-transition: all 0.3s;
@@ -112,54 +61,4 @@ form {
 	line-height: 1;
 	position: relative;
 	-webkit-font-smoothing: antialiased;
-}
-
-.icon-arrow-right:before {
-	content: "\e00d";
-}
-
-/* Button 4 */
-.btn-4 {
-	border-radius: 50px;
-	border: 2px solid black;
-	color: black;
-	overflow: hidden;
-}
-
-/*.btn-4:active {
-	border-color: #17954c;
-	color: #17954c;
-}*/
-
-.btn-4:hover {
-	background: #3E6B30;
-  /*border: 2px solid black;*/
-  color: white;
-}
-
-.btn-4:before {
-	position: absolute;
-	height: 100%;
-	font-size: 125%;
-	line-height: 3.5;
-	color: white;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-/*.btn-4:active:before {
-	color: #17954c;
-}*/
-
-/* Button 4c */
-.btn-4c:before {
-	left: 70%;
-	opacity: 0;
-	top: 0;
-}
-
-.btn-4c:hover:before {
-	left: 80%;
-	opacity: 1;
 }

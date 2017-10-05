@@ -1,0 +1,33 @@
+.game-table {
+  text-align: center;
+  border: 25px solid #6c3812;
+  /*border around whole screen (fix?)*/
+  height: 100vh;
+  padding-top: 10px;
+}
+
+.card {
+  border: 2px solid black;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 60px;
+  display: inline-block;
+  margin: 10px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.btn-1 {
+  /*size buttons evenly, regardless of text*/
+	border: 3px solid #fff;
+	color: #fff;
+}
+
+/* Button 1a */
+.btn-1a:hover,
+.btn-1a:active {
+	color: black;
+	background: #fff;
+  border: 3px solid #3E6B30;
+}

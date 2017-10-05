@@ -1,0 +1,65 @@
+.welcome {
+  width: 65%;
+  margin: auto;
+  background: white;
+  text-align: center;
+  height: 100vh;
+  padding-top: 10%;
+  font-family: 'Rye', cursive;
+}
+
+.enter-name, .name-field, .play-button {
+  padding-top: 10px;
+}
+
+#name {
+  width: 50%;
+  margin: auto;
+  background: #3E6B30;
+  color: white;
+  border: 2px solid black;
+  cursor: auto;
+  border-radius: 5px;
+}
+
+form {
+  display: inline;
+}
+
+.icon-arrow-right:before {
+	content: "\e00d";
+}
+
+.btn-4 {
+	border-radius: 50px;
+	border: 2px solid black;
+	color: black;
+	overflow: hidden;
+}
+
+.btn-4:hover {
+	background: #3E6B30;
+  color: white;
+}
+
+.btn-4:before {
+	position: absolute;
+	height: 100%;
+	font-size: 125%;
+	line-height: 3.5;
+	color: white;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-4c:before {
+	left: 70%;
+	opacity: 0;
+	top: 0;
+}
+
+.btn-4c:hover:before {
+	left: 80%;
+	opacity: 1;
+}

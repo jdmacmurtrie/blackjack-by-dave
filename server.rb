@@ -29,7 +29,7 @@ get '/play-game' do
     @dealer_hand = session[:dealer_hand].cards[0]
     session[:player_score] = session[:player_hand].calculate_hand
     session[:dealer_score] = session[:dealer_hand].calculate_one
-    session[:show_hand_message] = "Dealer's Visible Cards:"
+    session[:show_hand_message] = "Dealer's Visible Cards"
   else
     session[:show_hand_message] = "Dealer's Hand"
     session[:dealer_score] = session[:dealer_hand].calculate_hand
@@ -77,11 +77,11 @@ post '/play-game/dealer-turn' do
 end
 
 post '/new-game' do
+  session[:bust] = nil
+  session[:winner] = nil
+  session[:blackjack] = nil
   if params.keys == ['yes']
     session[:name]
-    session[:bust] = nil
-    session[:winner] = nil
-    session[:blackjack] = nil
     redirect '/new-game'
   else
     session[:name] = nil
