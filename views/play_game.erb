@@ -1,61 +1,63 @@
-<div class="game-table">
-  <div class="small-12 columns"><%= session[:show_hand_message] %></div>
-    <% if session[:turn] == "player" %>
-    <ul>
-      <div class="card"><%= @dealer_hand.value %> <%= @dealer_hand.suit %></div>
-    <% else %>
-    <ul>
-      <% session[:dealer_hand].cards.each do |card| %>
-        <div class="card dealer-card"><%= card.value %> <%= card.suit %></div>
+<!-- <div class="play-game"> -->
+  <div class="game-table">
+    <div class="small-12 columns"><%= session[:show_hand_message] %></div>
+      <% if session[:turn] == "player" %>
+      <ul>
+        <div class="card"><%= @dealer_hand.value %> <%= @dealer_hand.suit %></div>
+      <% else %>
+      <ul>
+        <% session[:dealer_hand].cards.each do |card| %>
+          <div class="card dealer-card"><%= card.value %> <%= card.suit %></div>
+        <% end %>
       <% end %>
-    <% end %>
-    </ul>
-    <div class="dealer-score">Dealer Score: <%= session[:dealer_score] %></div>
+      </ul>
+      <div class="dealer-score">Dealer Score: <%= session[:dealer_score] %></div>
 
-  <% if session[:turn] == "player" && !session[:bust] && !session[:blackjack] %>
-    <form action="/play-game/hit" method="post">
-      <button type="submit" class="btn btn-1 btn-1a" name="hit">Hit</button>
-    </form>
+    <% if session[:turn] == "player" && !session[:bust] && !session[:blackjack] %>
+      <form action="/play-game/hit" method="post">
+        <button type="submit" class="btn btn-1 btn-1a" name="hit">Hit</button>
+      </form>
 
-    <form action="play-game/dealer-turn" method="post">
-      <button type="submit" class="btn btn-1 btn-1a" name="stand">Stand</button>
-    </form>
-  <% end %>
-  <br>
-  <% if session[:blackjack] %>
-    <div class="blackjack">
-      You got Blackjack!
-      <% unless session[:winner] %>
-        <form class="" action="play-game/dealer-turn" method="post">
-          <button type="submit" class="btn btn-1 btn-1a" name="stand">Dealer's Turn</button>
-        </form>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if session[:bust] %>
-    <%= session[:bust] %> busted! Play again?
-    <%= erb(:play_again) %>
-  <% end %>
-
-  <% if !session[:winner].nil?  %>
-    <% if session[:winner] == 'player' %>
-      <%= session[:name] %> wins! Play again?
-    <% elsif session[:winner] == 'dealer' %>
-      <%= session[:name] %> loses. Play again?
-    <% else %>
-      Push!
-      <p>No winner. Play again?</p>
-    <% end %>
-    <%= erb(:play_again) %>
-  <% end %>
-  <br>
-  <%= session[:name] %>'s cards:
-  <ul>
-    <% session[:player_hand].cards.each do |card| %>
-    <div class="card"><%= card.value %> <%= card.suit %></div>
+      <form action="play-game/dealer-turn" method="post">
+        <button type="submit" class="btn btn-1 btn-1a" name="stand">Stand</button>
+      </form>
     <% end %>
     <br>
-    <%= session[:name] %>'s Score: <%= session[:player_score] %>
-  </ul>
-</div>
+    <% if session[:blackjack] %>
+      <div class="blackjack">
+        You got Blackjack!
+        <% unless session[:winner] %>
+          <form class="" action="play-game/dealer-turn" method="post">
+            <button type="submit" class="btn btn-1 btn-1a" name="stand">Dealer's Turn</button>
+          </form>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if session[:bust] %>
+      <%= session[:bust] %> busted! Play again?
+      <%= erb(:play_again) %>
+    <% end %>
+
+    <% if !session[:winner].nil?  %>
+      <% if session[:winner] == 'player' %>
+        <%= session[:name] %> wins! Play again?
+      <% elsif session[:winner] == 'dealer' %>
+        <%= session[:name] %> loses. Play again?
+      <% else %>
+        Push!
+        <p>No winner. Play again?</p>
+      <% end %>
+      <%= erb(:play_again) %>
+    <% end %>
+    <br>
+    <%= session[:name] %>'s cards:
+    <ul>
+      <% session[:player_hand].cards.each do |card| %>
+      <div class="card"><%= card.value %> <%= card.suit %></div>
+      <% end %>
+      <br>
+      <%= session[:name] %>'s Score: <%= session[:player_score] %>
+    </ul>
+  </div>
+<!-- </div> -->

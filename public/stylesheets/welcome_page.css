@@ -1,14 +1,20 @@
 .welcome {
-  width: 65%;
   margin: auto;
   background: white;
   text-align: center;
   height: 100vh;
-  padding-top: 10%;
+  padding-top: 2%;
   font-family: 'Rye', cursive;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e6b30+0,ffffff+12,ffffff+86,3e6b30+100 */
+  background: rgb(62,107,48); /* Old browsers */
+  background: -moz-linear-gradient(left, #3e6b30 0%, #FFFFFF 20%, #FFFFFF 80%, #3e6b30 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #3e6b30 0%,#FFFFFF 20%,#FFFFFF 80%,#3e6b30 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #3e6b30 0%,#FFFFFF 20%,#FFFFFF 80%,#3e6b30 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e6b30', endColorstr='#3e6b30',GradientType=1 ); /* IE6-9 */
+
 }
 
-.enter-name, .name-field, .play-button {
+.name-field, .play-button {
   padding-top: 10px;
 }
 

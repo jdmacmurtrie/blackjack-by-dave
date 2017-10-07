@@ -1,10 +1,25 @@
+/*@image: 'http://pancaketheorem.com/stuff/demos/borderimage/wood.png';
+@bgImage:'http://tumodaurbana.com/wp-content/uploads/2013/05/tumodaurbana-expo-dali.jpg';*/
+.play-game {
+  background: white;
+  height: 100%;
+
+}
+
 .game-table {
+  overflow: auto;
   text-align: center;
-  border: 25px solid #6c3812;
-  /*border around whole screen (fix?)*/
   height: 100vh;
   padding-top: 10px;
-}
+  width: 75%;
+  margin: auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+3,3e6b30+10,3e6b30+10,3e6b30+90,ffffff+97 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(left, #FFFFFF 0%, #3E6B30 10%, #3E6B30 10%, #3E6B30 90%, #FFFFFF 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #FFFFFF 0%,#3E6B30 10%,#3E6B30 10%,#3E6B30 90%,#FFFFFF 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #FFFFFF 0%,#3E6B30 10%,#3E6B30 10%,#3E6B30 90%,#FFFFFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */}
+
 
 .card {
   border: 2px solid black;
@@ -20,8 +35,11 @@
 
 .btn-1 {
   /*size buttons evenly, regardless of text*/
+  /*width: 15px;*/
 	border: 3px solid #fff;
 	color: #fff;
+  text-indent: -1.5em;
+  /*padding-left: 2px;*/
 }
 
 /* Button 1a */
