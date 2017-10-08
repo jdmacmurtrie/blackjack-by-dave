@@ -29,9 +29,7 @@ get '/play-game' do
     @dealer_hand = session[:dealer_hand].cards[0]
     session[:player_score] = session[:player_hand].calculate_hand
     session[:dealer_score] = session[:dealer_hand].calculate_one
-    session[:show_hand_message] = "Dealer's Visible Cards"
   else
-    session[:show_hand_message] = "Dealer's Hand"
     session[:dealer_score] = session[:dealer_hand].calculate_hand
   end
   erb :play_game

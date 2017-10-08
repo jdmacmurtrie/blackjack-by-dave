@@ -13,4 +13,8 @@ class Card
   def ace?
     @value == "A"
   end
+
+  def red?
+    %w{♦ ♥}.include? @suit
+  end
 end
