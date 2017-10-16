@@ -29,6 +29,11 @@ get '/play-game' do
     @dealer_hand = session[:dealer_hand].cards[0]
     session[:player_score] = session[:player_hand].calculate_hand
     session[:dealer_score] = session[:dealer_hand].calculate_one
+    if session[:player_hand].calculate_hand == 21
+      session[:turn] = "dealer"
+      session[:blackjack] = true
+      binding.pry
+    end
   else
     session[:dealer_score] = session[:dealer_hand].calculate_hand
   end
@@ -54,6 +59,7 @@ post '/play-game/hit' do
 
   if session[:player_hand].calculate_hand == 21
     session[:blackjack] = true
+    session[:turn] = "dealer"
   end
   redirect '/play-game'
 end
