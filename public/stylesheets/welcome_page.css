@@ -1,0 +1,71 @@
+.welcome {
+  margin: auto;
+  background: white;
+  text-align: center;
+  height: 100vh;
+  padding-top: 2%;
+  font-family: 'Rye', cursive;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e6b30+0,ffffff+12,ffffff+86,3e6b30+100 */
+  background: rgb(62,107,48); /* Old browsers */
+  background: -moz-linear-gradient(left, #3e6b30 0%, #FFFFFF 20%, #FFFFFF 80%, #3e6b30 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #3e6b30 0%,#FFFFFF 20%,#FFFFFF 80%,#3e6b30 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #3e6b30 0%,#FFFFFF 20%,#FFFFFF 80%,#3e6b30 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e6b30', endColorstr='#3e6b30',GradientType=1 ); /* IE6-9 */
+
+}
+
+.name-field, .play-button {
+  padding-top: 10px;
+}
+
+#name {
+  width: 50%;
+  margin: auto;
+  background: #3E6B30;
+  color: white;
+  border: 2px solid black;
+  cursor: auto;
+  border-radius: 5px;
+}
+
+form {
+  display: inline;
+}
+
+.icon-arrow-right:before {
+	content: "\e00d";
+}
+
+.btn-4 {
+	border-radius: 50px;
+	border: 2px solid black;
+	color: black;
+	overflow: hidden;
+}
+
+.btn-4:hover {
+	background: #3E6B30;
+  color: white;
+}
+
+.btn-4:before {
+	position: absolute;
+	height: 100%;
+	font-size: 125%;
+	line-height: 3.5;
+	color: white;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-4c:before {
+	left: 70%;
+	opacity: 0;
+	top: 0;
+}
+
+.btn-4c:hover:before {
+	left: 80%;
+	opacity: 1;
+}

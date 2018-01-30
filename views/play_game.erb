@@ -1,59 +1,74 @@
-<div class="small-12 columns"><%= session[:show_hand_message] %></div>
-  <% if session[:turn] == "player" %>
-  <ul>
-    <div class="card"><%= @dealer_hand.value %> <%= @dealer_hand.suit %></div>
-  <% else %>
-  <ul>
-    <% session[:dealer_hand].cards.each do |card| %>
-      <div class="card"><%= card.value %> <%= card.suit %></div>
+<div class="game-table">
+  <div class="small-12 columns">Dealer's Hand</div>
+  <div class="dealer-score">Score: <%= session[:dealer_score] %></div>
+    <% if session[:turn] == "player" %>
+    <ul>
+      <div class="card">
+        <%= @dealer_hand.value %> <%= @dealer_hand.suit %>
+      </div>
+      <div class="card blank-card">?</div>
+    <% else %>
+    <ul>
+      <% session[:dealer_hand].cards.each do |card| %>
+        <% if card.red? %>
+          <div class="card red-card"><%= card.value %> <%= card.suit %></div>
+        <% else %>
+          <div class="card"><%= card.value %> <%= card.suit %></div>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-  <br>
-    Dealer score:<%= session[:dealer_score] %>
-  </ul>
+    </ul>
+  <div class="action-buttons">
+    <% if session[:turn] == "player" && !session[:bust] && !session[:blackjack] %>
+      <form action="/play-game/hit" method="post">
+        <button type="submit" class="btn btn-1 btn-1a" name="hit">Hit</button>
+      </form>
 
-<% if session[:turn] == "player" && !session[:bust] && !session[:blackjack] %>
-  <form action="/play-game/hit" method="post">
-    <button type="submit", name="hit">Hit</button>
-  </form>
-
-  <form class="" action="play-game/dealer-turn" method="post">
-    <button type="submit", name="stand">Stand</button>
-  </form>
-<% end %>
-<br>
-<% if session[:blackjack] %>
-  <div class="blackjack">
-    You got Blackjack!
-    <% unless session[:winner] %>
-      <form class="" action="play-game/dealer-turn" method="post">
-        <button type="submit", name="stand">Dealer's Turn</button>
+      <form action="play-game/dealer-turn" method="post">
+        <button type="submit" class="btn btn-1 btn-1a" name="stand">Stand</button>
       </form>
     <% end %>
   </div>
-<% end %>
-
-<% if session[:bust] %>
-  <%= session[:bust] %> busted!
-  <%= erb(:play_again) %>
-<% end %>
-
-<% if !session[:winner].nil?  %>
-  <% if session[:winner] == 'player' %>
-    <%= session[:name] %> wins!
-  <% elsif session[:winner] == 'dealer' %>
-    <%= session[:name] %> loses.
-  <% else %>
-    Push! No winner.
+  <br>
+  <% if session[:blackjack] %>
+    <div class="blackjack">
+      You got Blackjack!
+      <% unless session[:winner] %>
+        <form class="" action="play-game/dealer-turn" method="post">
+          <button type="submit" class="btn btn-1 btn-1a" name="stand">Dealer's Turn</button>
+        </form>
+      <% end %>
+    </div>
   <% end %>
-  <%= erb(:play_again) %>
-<% end %>
-<br>
-<%= session[:name] %>'s cards:
-<ul>
-  <% session[:player_hand].cards.each do |card| %>
-  <div class="card"><%= card.value %> <%= card.suit %></div>
+
+  <% if session[:bust] %>
+    <%= session[:bust] %> busted! Play again?
+    <%= erb(:play_again) %>
+  <% end %>
+
+  <% if !session[:winner].nil?  %>
+    <% if session[:winner] == 'player' %>
+      <%= session[:name] %> wins! Play again?
+    <% elsif session[:winner] == 'dealer' %>
+      <%= session[:name] %> loses. Play again?
+    <% else %>
+      Push!
+      <p>No winner. Play again?</p>
+    <% end %>
+    <%= erb(:play_again) %>
   <% end %>
   <br>
-  <%= session[:name] %>'s score: <%= session[:player_score] %>
-</ul>
+  <ul>
+    <% session[:player_hand].cards.each do |card| %>
+      <% if card.red? %>
+        <div class=" card red-card"><%= card.value %> <%= card.suit %></div>
+      <% else %>
+        <div class="card"><%= card.value %> <%= card.suit %></div>
+      <% end %>
+    <% end %>
+    <br>
+    <%= session[:name] %>'s Hand
+    <br>
+    Score: <%= session[:player_score] %>
+  </ul>
+</div>

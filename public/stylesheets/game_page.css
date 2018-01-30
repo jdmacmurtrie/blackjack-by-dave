@@ -1,0 +1,55 @@
+.play-game {
+  background: white;
+  height: 100%;
+}
+
+.game-table {
+  overflow: auto;
+  text-align: center;
+  height: 100vh;
+  padding-top: 20px;
+  width: 75%;
+  margin: auto;
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(left, #FFFFFF 0%, #3E6B30 10%, #3E6B30 10%, #3E6B30 90%, #FFFFFF 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #FFFFFF 0%,#3E6B30 10%,#3E6B30 10%,#3E6B30 90%,#FFFFFF 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #FFFFFF 0%,#3E6B30 10%,#3E6B30 10%,#3E6B30 90%,#FFFFFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */}
+
+.blank-card {
+  /*background: card back*/
+}
+
+.red-card {
+  color: red
+}
+
+.card {
+  border: 2px solid black;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 60px;
+  display: inline-block;
+  margin: 10px;
+  box-shadow: 2px 2px 2px black;
+}
+
+/*.action-buttons {
+  padding: 80%;
+}*/
+
+.btn-1 {
+  /*to do: size buttons evenly, regardless of text*/
+	border: 3px solid #fff;
+	color: #fff;
+}
+
+/* Button 1a */
+.btn-1a:hover,
+.btn-1a:active {
+	color: black;
+	background: #fff;
+  border: 3px solid #3E6B30;
+}
