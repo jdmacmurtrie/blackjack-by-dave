@@ -16,5 +16,9 @@ FactoryBot.define do
     trait :red do
       suit '♥'
     end
+
+    trait :nine do
+      value 9
+    end
   end
 end

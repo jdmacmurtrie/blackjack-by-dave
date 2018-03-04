@@ -8,6 +8,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    backports (3.11.1)
+    builder (3.2.3)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -28,6 +30,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    multi_json (1.13.1)
     mustermann (1.0.2)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -40,6 +43,9 @@ GEM
       rack
     rack-test (0.8.3)
       rack (>= 1.0, < 3)
+    rack_session_access (0.1.1)
+      builder (>= 2.0.0)
+      rack (>= 1.0.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -58,6 +64,13 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.1)
       tilt (~> 2.0)
+    sinatra-contrib (2.0.1)
+      backports (>= 2.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.1)
+      sinatra (= 2.0.1)
+      tilt (>= 1.3, < 3)
     thread_safe (0.3.6)
     tilt (2.0.8)
     tzinfo (1.2.5)
@@ -73,8 +86,10 @@ DEPENDENCIES
   factory_bot (~> 4.0)
   launchy
   pry
+  rack_session_access
   rspec
   sinatra
+  sinatra-contrib
 
 RUBY VERSION
    ruby 2.3.3p222

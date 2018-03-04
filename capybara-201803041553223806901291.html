@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>blackjack-game</title>
+  <link rel="stylesheet" href="/stylesheets/foundation.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <link rel="stylesheet" href="/stylesheets/game_page.css">
+  <link rel="stylesheet" href="/stylesheets/welcome_page.css">
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+  <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+<div class="game-table">
+  <div class="small-12 columns">Dealer's Hand</div>
+  <div class="dealer-score">Score: 3</div>
+  <div id="dealer-cards">
+    
+    <ul>
+      <div class="card">
+        3 ♥
+      </div>
+      <div class="card blank-card">?</div>
+    </ul>
+    
+  </div>
+  <div class="action-buttons">
+    
+      <form action="/play-game/hit" method="post">
+        <button type="submit" class="hit btn btn-1 btn-1a" name="hit">Hit</button>
+      </form>
+
+      <form action="play-game/dealer-turn" method="post">
+        <button type="submit" class="stand btn btn-1 btn-1a" name="stand">Stand</button>
+      </form>
+    
+  </div>
+  <br>
+  
+
+  
+
+  
+  <br>
+  <div id="player-cards">
+    <ul>
+      
+        
+          <div class="card">K ♠</div>
+        
+      
+        
+          <div class="card">K ♠</div>
+        
+      
+      <br>
+      David's Hand
+      <br>
+      Score: 20
+    </ul>
+  </div>
+</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'pry'
+require 'sinatra/reloader'
 require_relative 'models/card'
 require_relative 'models/hand'
 require_relative 'models/deck'
@@ -32,7 +33,6 @@ get '/play-game' do
     if session[:player_hand].calculate_hand == 21
       session[:turn] = "dealer"
       session[:blackjack] = true
-      binding.pry
     end
   else
     session[:dealer_score] = session[:dealer_hand].calculate_hand
@@ -41,12 +41,17 @@ get '/play-game' do
 end
 
 post '/play-game' do
-  session[:turn] = 'player'
-  session[:name] = params['name']
-  session[:deck] = Deck.new
-  session[:player_hand] = Hand.new(session[:deck].deal!(2))
-  session[:dealer_hand] = Hand.new(session[:deck].deal!(2))
-  redirect '/play-game'
+  if params['name'].strip != ''
+    session[:turn] = 'player'
+    session[:name] = params['name']
+    session[:deck] = Deck.new
+    session[:player_hand] = Hand.new(session[:deck].deal!(2))
+    session[:dealer_hand] = Hand.new(session[:deck].deal!(2))
+    redirect '/play-game'
+  else
+    @error = "Enter a name to play the game."
+    erb :new_game
+  end
 end
 
 post '/play-game/hit' do
@@ -55,6 +60,7 @@ post '/play-game/hit' do
   session[:player_score] = session[:player_hand].calculate_hand
   if session[:player_hand].check_bust
     session[:bust] = session[:name]
+    session[:winner] = 'dealer'
   end
 
   if session[:player_hand].calculate_hand == 21
@@ -72,8 +78,10 @@ post '/play-game/dealer-turn' do
   while session[:dealer_hand].calculate_hand <= 17 && !session[:dealer_hand].bust
     session[:dealer_hand].hit(session[:deck])
   end
+
   if session[:dealer_hand].check_bust
     session[:bust] = 'Dealer'
+    session[:winner] = 'player'
   else
     session[:winner] = session[:dealer_hand].calculate_winner(session[:player_hand], session[:dealer_hand])
   end
@@ -84,7 +92,7 @@ post '/new-game' do
   session[:bust] = nil
   session[:winner] = nil
   session[:blackjack] = nil
-  if params.keys == ['yes']
+  if params.keys.include?('yes')
     session[:name]
     redirect '/new-game'
   else
