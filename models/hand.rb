@@ -47,31 +47,15 @@ class Hand
       'dealer'
     end
   end
-  # def dealer_hand
-  #   puts "\n#{@player}\'s visible hand:"
-  #   puts "#{@cards.first.value} of #{@cards.first.suit}"
-  # end
-
-  # def show_hand
-  #   @cards.each do |card|
-  #     puts "#{@player} was dealt a #{card.value} of #{card.suit}"
-  #     sleep(1)
-  #   end
-  #   puts "Total: #{calculate_hand}\n"
-  # end
 
   def hit(deck)
     new_card = deck.deal!(1)
     @cards << new_card[0]
-    # sleep(1)
-    # puts "#{@player} receives a #{new_card[0].value} of #{new_card[0].suit}"
-    # puts "Total: #{calculate_hand}\n"
   end
 
   def check_bust
     if calculate_hand > 21
       @bust = true
-      # puts "Bust! #{@player} loses."
     end
   end
 end

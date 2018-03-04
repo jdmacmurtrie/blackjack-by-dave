@@ -32,6 +32,10 @@ form {
   display: inline;
 }
 
+input {
+  text-align: center;
+}
+
 .icon-arrow-right:before {
 	content: "\e00d";
 }

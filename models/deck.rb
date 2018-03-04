@@ -3,12 +3,8 @@ class Deck
   RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
 
   attr_reader :cards
-  def initialize(a_few_cards = nil)
-    if !a_few_cards.nil?
-      @cards = a_few_cards
-    else
-      @cards = make_deck
-    end
+  def initialize
+    @cards = make_deck
   end
 
   def make_deck
