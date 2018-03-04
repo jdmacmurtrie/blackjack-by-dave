@@ -32,6 +32,14 @@ form {
   display: inline;
 }
 
+input {
+  text-align: center;
+}
+
+.error-message {
+  color: red
+}
+
 .icon-arrow-right:before {
 	content: "\e00d";
 }

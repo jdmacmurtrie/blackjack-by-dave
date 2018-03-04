@@ -1,12 +1,14 @@
 <div class="game-table">
   <div class="small-12 columns">Dealer's Hand</div>
   <div class="dealer-score">Score: <%= session[:dealer_score] %></div>
+  <div id="dealer-cards">
     <% if session[:turn] == "player" %>
     <ul>
       <div class="card">
         <%= @dealer_hand.value %> <%= @dealer_hand.suit %>
       </div>
       <div class="card blank-card">?</div>
+    </ul>
     <% else %>
     <ul>
       <% session[:dealer_hand].cards.each do |card| %>
@@ -16,16 +18,17 @@
           <div class="card"><%= card.value %> <%= card.suit %></div>
         <% end %>
       <% end %>
-    <% end %>
     </ul>
+    <% end %>
+  </div>
   <div class="action-buttons">
     <% if session[:turn] == "player" && !session[:bust] && !session[:blackjack] %>
       <form action="/play-game/hit" method="post">
-        <button type="submit" class="btn btn-1 btn-1a" name="hit">Hit</button>
+        <button type="submit" class="hit btn btn-1 btn-1a" name="hit">Hit</button>
       </form>
 
       <form action="play-game/dealer-turn" method="post">
-        <button type="submit" class="btn btn-1 btn-1a" name="stand">Stand</button>
+        <button type="submit" class="stand btn btn-1 btn-1a" name="stand">Stand</button>
       </form>
     <% end %>
   </div>
@@ -42,11 +45,10 @@
   <% end %>
 
   <% if session[:bust] %>
-    <%= session[:bust] %> busted! Play again?
-    <%= erb(:play_again) %>
+    Bust!
   <% end %>
 
-  <% if !session[:winner].nil?  %>
+  <% if session[:winner]  %>
     <% if session[:winner] == 'player' %>
       <%= session[:name] %> wins! Play again?
     <% elsif session[:winner] == 'dealer' %>
@@ -58,17 +60,19 @@
     <%= erb(:play_again) %>
   <% end %>
   <br>
-  <ul>
-    <% session[:player_hand].cards.each do |card| %>
-      <% if card.red? %>
-        <div class=" card red-card"><%= card.value %> <%= card.suit %></div>
-      <% else %>
-        <div class="card"><%= card.value %> <%= card.suit %></div>
+  <div id="player-cards">
+    <ul>
+      <% session[:player_hand].cards.each do |card| %>
+        <% if card.red? %>
+          <div class="card red-card"><%= card.value %> <%= card.suit %></div>
+        <% else %>
+          <div class="card"><%= card.value %> <%= card.suit %></div>
+        <% end %>
       <% end %>
-    <% end %>
-    <br>
-    <%= session[:name] %>'s Hand
-    <br>
-    Score: <%= session[:player_score] %>
-  </ul>
+      <br>
+      <%= session[:name] %>'s Hand
+      <br>
+      Score: <%= session[:player_score] %>
+    </ul>
+  </div>
 </div>
