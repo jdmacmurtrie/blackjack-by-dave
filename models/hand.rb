@@ -1,6 +1,7 @@
 class Hand
   attr_reader :cards
   attr_accessor :bust
+
   def initialize(cards)
     @cards = cards
     @bust = false
@@ -19,6 +20,10 @@ class Hand
         total += card.value
       end
     end
+    total_aces(total, ace_count)
+  end
+
+  def total_aces(total, ace_count)
     if ace_count > 0 && total + 10 <= 21
       total += 10
     end
