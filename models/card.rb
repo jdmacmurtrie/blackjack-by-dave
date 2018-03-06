@@ -18,5 +18,3 @@ class Card
     %w{♦ ♥}.include? @suit
   end
 end
-
-# test

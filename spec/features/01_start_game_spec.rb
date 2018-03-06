@@ -25,5 +25,3 @@ feature 'user starts game' do
     expect(page).to have_text "Enter a name to play the game"
   end
 end
-
-# test

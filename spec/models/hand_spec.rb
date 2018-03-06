@@ -100,5 +100,3 @@ RSpec.describe Hand do
     end
   end
 end
-
-# test

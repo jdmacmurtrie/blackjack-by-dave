@@ -21,5 +21,3 @@ class Deck
     cards.pop(number_of_cards)
   end
 end
-
-# test

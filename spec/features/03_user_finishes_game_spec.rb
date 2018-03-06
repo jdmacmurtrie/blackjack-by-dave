@@ -26,5 +26,3 @@ feature 'user finishes game' do
     expect(page.current_path).to eq('/new-game')
   end
 end
-
-# test

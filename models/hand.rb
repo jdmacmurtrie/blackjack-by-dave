@@ -64,5 +64,3 @@ class Hand
     end
   end
 end
-
-# test
