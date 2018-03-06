@@ -37,4 +37,4 @@ Submit a PR!  I'd love any and all constructive feedback.
 
 ## Acknowledgments
 
-* Thanks to Launch Academy, and especially to Kylee Acker for giving me the tools to get this off the ground.
+Thanks to Launch Academy, and especially to (Kylee Acker)[github.com/kjoya] for giving me the tools to get this off the ground.
