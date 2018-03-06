@@ -71,7 +71,7 @@ feature "user plays game" do
   scenario "user wins" do
     set_player_hand(two_facecards)
     set_dealer_hand(high_hand)
-    click_button "Stand"
+    find('button', class: 'stand').click
 
     expect(page).to have_text("David wins! Play again?")
   end
@@ -79,7 +79,7 @@ feature "user plays game" do
   scenario "user and dealer push" do
     set_player_hand(two_facecards)
     set_dealer_hand(two_facecards)
-    click_button "Stand"
+    find('button', class: 'stand').click
 
     expect(page).to have_text("Push! No winner. Play again?")
   end
