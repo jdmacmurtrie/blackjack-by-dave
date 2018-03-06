@@ -8,9 +8,24 @@ Blackjack by Dave is an exercise in OOP reworked into a Sinatra web app.  The or
 
 ## Getting Started
 
-After cloning the repo, simply:
+In order to run this application locally, you must at least have Ruby 2.3.3 installed.
+```
+$ ruby -v
+=> ruby 2.3.3
+```
+
+### Installing
+
+This project uses `Bundler` as its dependency manager.  To install the necessary gems:
+```
+$ bundle
+```
+
+### Setting Up
+
+In order to run the app in a development server, run the following command in your terminal:
+
 ```sh
-$ bundle install
 $ ruby server.rb
 ```
 Then, navigate to `localhost:4567`.
@@ -25,9 +40,17 @@ $ rspec
 ```
 **NOTE:** RSpec may get stuck on a CSS selector on one of the feature tests.  This bug happens only on the first run of that particular test and then never again.  I am currently working on a fix for this.
 
+## Deployment
+
+This application is deployed using Heroku using these instructions: https://devcenter.heroku.com/articles/git
+
 ## Contributing
 
 Submit a PR!  I'd love any and all constructive feedback.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jdmacmurtrie/blackjack-by-dave/blob/master/LICENSE.md) file for details
 
 ## Acknowledgments
 
