@@ -5,12 +5,12 @@ require 'capybara/rspec'
 require 'rack_session_access'
 require 'rack_session_access/capybara'
 require 'coveralls'
+Coveralls.wear!
 
 require_relative '../server.rb'
 set :environment, :test
 
 Capybara.app = Sinatra::Application
-Coveralls.wear!
 
 Sinatra::Application.configure do |app|
   app.use RackSessionAccess::Middleware
