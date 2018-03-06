@@ -25,11 +25,6 @@ $ rspec
 ```
 **NOTE:** RSpec may get stuck on a CSS selector on one of the feature tests.  This bug happens only on the first run of that particular test and then never again.  I am currently working on a fix for this.
 
-## Live App
-
-As noted in the repo description, this app may be viewed live at <http://blackjack-by-dave.herokuapp.com/>.
-
-
 ## Contributing
 
 Submit a PR!  I'd love any and all constructive feedback.
